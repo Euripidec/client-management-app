@@ -1,13 +1,17 @@
+// src/app/app.component.ts
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ClientRegistrationComponent } from './client-registration/client-registration.component';
+import { ClientListComponent } from './client-list/client-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [ClientRegistrationComponent, ClientListComponent],
+  template: `
+    <h1>Client Management</h1>
+    <app-client-registration></app-client-registration>
+    <app-client-list></app-client-list>
+  `,
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'client-management-app';
-}
+export class AppComponent {}

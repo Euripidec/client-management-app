@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let client of clients">
+    <div [ngSwitch]="client.userType">
+      <span *ngSwitchCase="'Regular'">{{ client.name }} (Regular)</span>
+      <span *ngSwitchCase="'Premium'">{{ client.name }} (Premium)</span>
+    </div>
+    <span class="email">{{ client.email }}</span>
+    <span class="registration-date">{{ client.registrationDate | date }}</span>
+    <span *ngIf="client.isLateWithPayment" class="status">Late</span>
+  </li>
+</ul>
